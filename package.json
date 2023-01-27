@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "name": "battleship",
+  "version": "1.0.0",
+  "main": "battleship.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node battleship.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

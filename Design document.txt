@@ -1,0 +1,57 @@
+
+#For Battleship Design
+
+1) Main stream
+    1.1) Start process
+        a) Show welcome/choice screen. 
+        b) Player could select his choice to start play or just exit the program.
+    1.2) Play process
+        a) Prepare/initial play environment/status;
+        b) Show current tables' status, ready/wait player input his shot location;
+        c) Check player's location is valid;
+        d) Update play status based on player's input;
+        e) Check game is finished or not; Yes, jump to g);
+        f) Back to b);
+        g) Prepare/show finish screen; Exit or wait for play again or review the hits history.
+
+2) Data 
+    2.1) Ship related. location, direction, original life, 
+    2.2) Shot related. Shot index, Shot location, 
+    2.3) Player related. Player name, win/lose count.
+    2.4) Play related. 
+        a) Ship left life;
+        b) Shot count, shot left;
+        c) Grid record: empty water, ship occupied; hitted, un-hitted;
+
+3) Module/class Design
+    3.1) Play environment/status:
+        a) Point, Class: x, y;
+        b) Ship, Class: location, direction, Points occupied, original life, left life;
+        c) Grid for PC, 2-D Array. Including 10 x 10 cells to record/show the information in that grid/water.        
+        d) Cell, Class: Including all information in this cell.
+            d.1) Point. Represent the location of this cell;
+            d.2) T&F. Occupied by PC's ship;
+            d.3) T&F. Hit player's ship successfully by PC's shot.;
+        e) Grid for Player, 2-D Array. Including 10 x 10 cells to record/show the information in that grid/water.
+        f) Shots for Player, 1-D Array. Including the location player's shot.
+        g) Shots for PC, 1-D Array.
+    3.2) Module Logical:
+        a) Initial environment.
+            a.1) Set PC's grid, set Player's grid; And initial their cells to 0,0,0,0,0....
+            a.2) Initial PC's and Player's shot array;
+            a.3) PC placed its ship randomly and initial ship's life.
+        b) Play process.
+            b.1 ) Render status to screen, and wait player's move;
+                i) Render content: Hit information from grid, shot information
+            b.2) Process player's input;
+                i) Check valid of shot; if it's in grids, it was not shotted.
+                ii) Put the shot in shots history array;
+                iii) Update play's grid. The hit information.
+            b.3) Check game is over.
+            b.4) Go back to b.1).
+        c) Logical for PC place its ship.
+
+
+
+
+    
